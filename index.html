@@ -1307,6 +1307,23 @@
             display: block;
         }
 
+        .phone-error {
+            display: none;
+            color: #dc2626;
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .phone-error.show {
+            display: block;
+        }
+
+        .form-input.input-error {
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
         .btn-loading {
             position: relative;
             color: transparent !important;
@@ -1472,6 +1489,7 @@
                             <div class="form-group">
                                 <label for="hero-phone" class="form-label">Phone Number</label>
                                 <input type="tel" id="hero-phone" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+                                <div class="phone-error" id="hero-phone-error">Please enter a valid 10-digit US phone number</div>
                             </div>
 
                             <div class="form-group">
@@ -1873,6 +1891,7 @@
                         <div class="form-group">
                             <label for="contact-phone" class="form-label">Phone Number</label>
                             <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+                            <div class="phone-error" id="contact-phone-error">Please enter a valid 10-digit US phone number</div>
                         </div>
 
                         <div class="form-group">
@@ -2002,6 +2021,51 @@
         storeAttribution();
 
         // ============================================
+        // PHONE VALIDATION
+        // ============================================
+        function formatPhoneNumber(value) {
+            const digits = value.replace(/\D/g, '');
+            if (digits.length <= 3) return digits;
+            if (digits.length <= 6) return '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
+            return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6, 10);
+        }
+
+        function isValidUSPhone(value) {
+            const digits = value.replace(/\D/g, '');
+            if (digits.length === 11 && digits[0] === '1') return true;
+            return digits.length === 10;
+        }
+
+        function setupPhoneValidation(inputId, errorId) {
+            const input = document.getElementById(inputId);
+            const error = document.getElementById(errorId);
+            if (!input || !error) return;
+
+            input.addEventListener('input', function() {
+                const cursorPos = this.selectionStart;
+                const prevLen = this.value.length;
+                this.value = formatPhoneNumber(this.value);
+                const newLen = this.value.length;
+                const newPos = cursorPos + (newLen - prevLen);
+                this.setSelectionRange(newPos, newPos);
+
+                if (input.classList.contains('input-error')) {
+                    if (isValidUSPhone(this.value)) {
+                        input.classList.remove('input-error');
+                        error.classList.remove('show');
+                    }
+                }
+            });
+
+            input.addEventListener('blur', function() {
+                if (this.value && !isValidUSPhone(this.value)) {
+                    input.classList.add('input-error');
+                    error.classList.add('show');
+                }
+            });
+        }
+
+        // ============================================
         // FORM HANDLING
         // ============================================
         function handleFormSubmit(form, formId) {
@@ -2014,6 +2078,16 @@
 
                 if (!form.checkValidity()) {
                     form.reportValidity();
+                    return;
+                }
+
+                // Validate phone number
+                const phoneInput = form.querySelector('input[name="phone"]');
+                if (phoneInput && !isValidUSPhone(phoneInput.value)) {
+                    const phoneError = form.querySelector('.phone-error');
+                    phoneInput.classList.add('input-error');
+                    if (phoneError) phoneError.classList.add('show');
+                    phoneInput.focus();
                     return;
                 }
 
@@ -2088,6 +2162,10 @@
             const contactForm = document.getElementById('contact-lead-form');
             if (heroForm) handleFormSubmit(heroForm, 'hero-form');
             if (contactForm) handleFormSubmit(contactForm, 'contact-form');
+
+            // Setup phone validation on both forms
+            setupPhoneValidation('hero-phone', 'hero-phone-error');
+            setupPhoneValidation('contact-phone', 'contact-phone-error');
         });
 
         // Smooth scroll
