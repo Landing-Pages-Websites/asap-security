@@ -2021,7 +2021,7 @@
         storeAttribution();
 
         // ============================================
-        // PHONE VALIDATION
+        // PHONE VALIDATION (Enhanced)
         // ============================================
         function formatPhoneNumber(value) {
             const digits = value.replace(/\D/g, '');
@@ -2032,8 +2032,60 @@
 
         function isValidUSPhone(value) {
             const digits = value.replace(/\D/g, '');
-            if (digits.length === 11 && digits[0] === '1') return true;
-            return digits.length === 10;
+
+            // Normalize: strip leading country code 1
+            const d = (digits.length === 11 && digits[0] === '1') ? digits.slice(1) : digits;
+
+            // Must be exactly 10 digits
+            if (d.length !== 10) return false;
+
+            const areaCode = d.slice(0, 3);
+            const exchange = d.slice(3, 6);
+
+            // NANP rules: area code & exchange must start with 2-9
+            if (d[0] < '2' || d[3] < '2') return false;
+
+            // Block N11 service codes as area codes (211, 311, 411, 511, 611, 711, 811, 911)
+            if (areaCode[1] === '1' && areaCode[2] === '1') return false;
+
+            // Block 555 exchange (reserved/fictional)
+            if (exchange === '555') return false;
+
+            // Block toll-free and premium rate area codes
+            var blockedAreaCodes = ['800','888','877','866','855','844','833','822','900'];
+            if (blockedAreaCodes.indexOf(areaCode) !== -1) return false;
+
+            // Block all-same-digit numbers (e.g. 2222222222, 9999999999)
+            if (/^(\d)\1{9}$/.test(d)) return false;
+
+            // Block common known fake/test numbers
+            var fakeNumbers = [
+                '1234567890','2345678901','3456789012',
+                '9876543210','8765432109','7654321098',
+                '1231231234','4564564567','7897897890'
+            ];
+            if (fakeNumbers.indexOf(d) !== -1) return false;
+
+            // Block repeating 3-digit patterns (e.g. 234234234x is close, 1231231231)
+            if (/^(\d{3})\1{2}\d$/.test(d)) return false;
+
+            return true;
+        }
+
+        // Returns a specific error message for invalid phone numbers
+        function getPhoneErrorMessage(value) {
+            const digits = value.replace(/\D/g, '');
+            const d = (digits.length === 11 && digits[0] === '1') ? digits.slice(1) : digits;
+
+            if (d.length !== 10) return 'Please enter a valid 10-digit US phone number';
+            if (d[0] < '2') return 'Invalid area code. US area codes start with 2-9';
+            if (d[0] >= '2' && d[1] === '1' && d[2] === '1') return 'That looks like a service code, not a phone number';
+            if (d[3] < '2') return 'Invalid phone number format';
+            if (d.slice(3,6) === '555') return 'Please enter a real phone number';
+            var blockedAreaCodes = ['800','888','877','866','855','844','833','822','900'];
+            if (blockedAreaCodes.indexOf(d.slice(0,3)) !== -1) return 'Please enter a direct phone number, not a toll-free number';
+            if (/^(\d)\1{9}$/.test(d)) return 'Please enter a real phone number';
+            return 'Please enter a valid US phone number';
         }
 
         function setupPhoneValidation(inputId, errorId) {
@@ -2060,6 +2112,7 @@
             input.addEventListener('blur', function() {
                 if (this.value && !isValidUSPhone(this.value)) {
                     input.classList.add('input-error');
+                    error.textContent = getPhoneErrorMessage(this.value);
                     error.classList.add('show');
                 }
             });
@@ -2086,7 +2139,10 @@
                 if (phoneInput && !isValidUSPhone(phoneInput.value)) {
                     const phoneError = form.querySelector('.phone-error');
                     phoneInput.classList.add('input-error');
-                    if (phoneError) phoneError.classList.add('show');
+                    if (phoneError) {
+                        phoneError.textContent = getPhoneErrorMessage(phoneInput.value);
+                        phoneError.classList.add('show');
+                    }
                     phoneInput.focus();
                     return;
                 }
