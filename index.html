@@ -647,6 +647,30 @@
             50% { opacity: 0.5; transform: scale(1.2); }
         }
 
+        .form-trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--color-gray-200);
+        }
+
+        .form-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--color-gray-500);
+        }
+
+        .form-trust-item svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
         /* ============================================
            SERVICES SECTION
            ============================================ */
@@ -978,6 +1002,30 @@
         .testimonial-source {
             font-size: 13px;
             color: var(--color-gray-400);
+        }
+
+        .google-rating-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .google-rating-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .google-rating-stars svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .google-rating-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-gray-600);
         }
 
         /* ============================================
@@ -1418,8 +1466,8 @@
                     <div class="hero-eyebrow">Professional Guard Services</div>
 
                     <h1 class="hero-title">
-                        <span>Security That</span><br>
-                        <span class="highlight">Protects What Matters</span>
+                        <span>San Diego's Trusted</span><br>
+                        <span class="highlight">Security Guard Services</span>
                     </h1>
 
                     <p class="hero-description">
@@ -1436,6 +1484,8 @@
                             Call Now
                         </a>
                     </div>
+                    
+                    <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 12px; font-weight: 500;">Serving San Diego County &bull; Orange County &bull; Riverside County &bull; Southern California</p>
 
                     <!-- Stats -->
                     <div class="hero-stats">
@@ -1473,17 +1523,17 @@
                             <div class="form-row form-group">
                                 <div>
                                     <label for="hero-first-name" class="form-label">First Name</label>
-                                    <input type="text" id="hero-first-name" name="first_name" class="form-input" placeholder="John" required>
+                                    <input type="text" id="hero-first-name" name="first_name" class="form-input" placeholder="First name" required>
                                 </div>
                                 <div>
                                     <label for="hero-last-name" class="form-label">Last Name</label>
-                                    <input type="text" id="hero-last-name" name="last_name" class="form-input" placeholder="Smith" required>
+                                    <input type="text" id="hero-last-name" name="last_name" class="form-input" placeholder="Last name" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="hero-email" class="form-label">Work Email</label>
-                                <input type="email" id="hero-email" name="email" class="form-input" placeholder="john@company.com" required>
+                                <input type="email" id="hero-email" name="email" class="form-input" placeholder="name@yourcompany.com" required>
                             </div>
 
                             <div class="form-group">
@@ -1523,6 +1573,21 @@
                         <div class="form-urgency">
                             <div class="pulse-dot"></div>
                             <span>5 security consultants available now</span>
+                        </div>
+
+                        <div class="form-trust-badges">
+                            <div class="form-trust-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fbbf24" stroke="none" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <span>4.9/5 Google Rating</span>
+                            </div>
+                            <div class="form-trust-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span>GSA Contract Holder</span>
+                            </div>
+                            <div class="form-trust-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>BBB A+ Rated</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1586,6 +1651,69 @@
                     </div>
                     <h3 class="service-title">Residential Security</h3>
                     <p class="service-description">24/7 surveillance and guard services for HOAs, gated communities, and properties.</p>
+                </div>
+            </div>
+
+            <div class="section-ctas">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    Get Your Free Quote
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="tel:1-833-272-7247" class="btn btn-outline btn-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    1-(833)-272-7247
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section (moved up for geo-qualification) -->
+    <section id="location">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Service Area</div>
+                <h2 class="section-title">Serving San Diego & Southern California</h2>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-info">
+                    <h3>ASAP Security Guards</h3>
+                    <div class="location-address">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <p>9815 Carroll Canyon Rd #208<br>San Diego, CA 92131</p>
+                    </div>
+
+                    <div class="service-areas">
+                        <h4>Service Areas</h4>
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                San Diego County
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Orange County
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Riverside County
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Southern California
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="location-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.8599099753847!2d-117.1498709!3d32.9015889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbffbd0dc0c0c9%3A0x8c0c8c8c8c8c8c8c!2s9815%20Carroll%20Canyon%20Rd%20%23208%2C%20San%20Diego%2C%20CA%2092131!5e0!3m2!1sen!2sus!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="ASAP Security Office Location">
+                    </iframe>
                 </div>
             </div>
 
@@ -1725,7 +1853,16 @@
             <div class="section-header">
                 <div class="section-eyebrow">Testimonials</div>
                 <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-description">Don't just take our word for it.</p>
+                <div class="google-rating-badge">
+                    <div class="google-rating-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fbbf24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fbbf24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fbbf24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fbbf24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fbbf24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <span class="google-rating-text">4.9 out of 5 &bull; 30+ Google Reviews</span>
+                </div>
             </div>
 
             <div class="testimonials-grid">
@@ -1737,29 +1874,83 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
-                    <p class="testimonial-text">"The guards are very friendly and professional. They offer to help carry stuff and use flashlights to light employees' paths at night."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">ST</div>
-                        <div>
-                            <div class="testimonial-name">Shark Tank</div>
-                            <div class="testimonial-source">Google Review</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <p class="testimonial-text">"Very responsive and professional team. They adapted quickly when our security needs changed at the last minute."</p>
+                    <p class="testimonial-text">"I'm an HOA manager in San Diego. We had a lot of homeless issues and some break-ins. ASAP was very responsive and their quote was affordable. We hired them for all our 5 properties. Their daily activity report was outstanding and very detailed."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">RH</div>
                         <div>
                             <div class="testimonial-name">Raef Haleem</div>
+                            <div class="testimonial-source">HOA Management &bull; Google Review</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Great company to work with, they are very responsive and take their job seriously. We are a hotel in downtown San Diego and they are doing great work. Highly recommended, don't look any further."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ST</div>
+                        <div>
+                            <div class="testimonial-name">Shark Tank</div>
+                            <div class="testimonial-source">Hotel &bull; Google Review</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"We have guards on our property due to a dispute over property boundaries. We didn't expect them to be so friendly, helpful, and in general awesome! Lots of great things to say about ASAP Security."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DF</div>
+                        <div>
+                            <div class="testimonial-name">Dylan Finneran</div>
+                            <div class="testimonial-source">Property Security &bull; Google Review</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"The guards are very friendly and professional. They offer to help carry stuff and use flashlights to light employees' paths at night. Great service overall."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LL</div>
+                        <div>
+                            <div class="testimonial-name">Llama Llama</div>
+                            <div class="testimonial-source">Commercial Facility &bull; Google Review</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Good management and a team dedicated to performing their duties. Professional, reliable, and thorough in everything they do."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">NA</div>
+                        <div>
+                            <div class="testimonial-name">Nabeel Akobuan</div>
                             <div class="testimonial-source">Google Review</div>
                         </div>
                     </div>
@@ -1773,12 +1964,12 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     </div>
-                    <p class="testimonial-text">"Outstanding security services. The guards are well-trained, punctual, and extremely professional. Our construction site has never been safer."</p>
+                    <p class="testimonial-text">"ASAP Security did a great job for our office Christmas party! They made sure the event ran smoothly and everyone felt safe the entire time. Would definitely hire again."</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">DF</div>
+                        <div class="testimonial-avatar">LG</div>
                         <div>
-                            <div class="testimonial-name">Dylan Finneran</div>
-                            <div class="testimonial-source">Google Review</div>
+                            <div class="testimonial-name">Leslie Garcia</div>
+                            <div class="testimonial-source">Event Security &bull; Google Review</div>
                         </div>
                     </div>
                 </div>
@@ -1788,69 +1979,6 @@
                 <a href="#contact" class="btn btn-primary btn-lg">
                     Get Your Free Quote
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-eyebrow">Service Area</div>
-                <h2 class="section-title">Serving San Diego & Southern California</h2>
-            </div>
-
-            <div class="location-grid">
-                <div class="location-info">
-                    <h3>ASAP Security Guards</h3>
-                    <div class="location-address">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <p>9815 Carroll Canyon Rd #208<br>San Diego, CA 92131</p>
-                    </div>
-
-                    <div class="service-areas">
-                        <h4>Service Areas</h4>
-                        <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                San Diego County
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                Orange County
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                Riverside County
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                Southern California
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="location-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.8599099753847!2d-117.1498709!3d32.9015889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbffbd0dc0c0c9%3A0x8c0c8c8c8c8c8c8c!2s9815%20Carroll%20Canyon%20Rd%20%23208%2C%20San%20Diego%2C%20CA%2092131!5e0!3m2!1sen!2sus!4v1234567890"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="ASAP Security Office Location">
-                    </iframe>
-                </div>
-            </div>
-
-            <div class="section-ctas">
-                <a href="#contact" class="btn btn-primary btn-lg">
-                    Get Your Free Quote
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-                <a href="tel:1-833-272-7247" class="btn btn-outline btn-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    1-(833)-272-7247
                 </a>
             </div>
         </div>
@@ -1875,17 +2003,17 @@
                         <div class="form-row form-group">
                             <div>
                                 <label for="contact-first-name" class="form-label">First Name</label>
-                                <input type="text" id="contact-first-name" name="first_name" class="form-input" placeholder="John" required>
+                                <input type="text" id="contact-first-name" name="first_name" class="form-input" placeholder="First name" required>
                             </div>
                             <div>
                                 <label for="contact-last-name" class="form-label">Last Name</label>
-                                <input type="text" id="contact-last-name" name="last_name" class="form-input" placeholder="Smith" required>
+                                <input type="text" id="contact-last-name" name="last_name" class="form-input" placeholder="Last name" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="contact-email" class="form-label">Work Email</label>
-                            <input type="email" id="contact-email" name="email" class="form-input" placeholder="john@company.com" required>
+                            <input type="email" id="contact-email" name="email" class="form-input" placeholder="name@yourcompany.com" required>
                         </div>
 
                         <div class="form-group">
