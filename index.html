@@ -192,8 +192,9 @@
         }
 
         .nav-logo img {
-            height: 60px;
+            height: 70px;
             width: auto;
+            image-rendering: -webkit-optimize-contrast;
         }
 
         .nav-actions {
@@ -650,10 +651,11 @@
         .form-trust-badges {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 12px;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid var(--color-gray-200);
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--color-gray-200);
         }
 
         .form-trust-item {
@@ -1515,6 +1517,21 @@
                             <p class="form-subtitle">We'll respond within 2 hours</p>
                         </div>
 
+                        <div class="form-trust-badges">
+                            <div class="form-trust-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fbbf24" stroke="none" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <span>4.9/5 Google</span>
+                            </div>
+                            <div class="form-trust-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span>GSA Contractor</span>
+                            </div>
+                            <div class="form-trust-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>BBB A+</span>
+                            </div>
+                        </div>
+
                         <p class="form-employment-notice">This form is for security service inquiries only. If you are looking for employment, please visit our <a href="https://asapsecurity.org/careers/" target="_blank" rel="noopener">careers page</a>.</p>
 
                         <form id="hero-lead-form" class="lead-form" novalidate>
@@ -1570,25 +1587,6 @@
                             <p>We'll contact you within 2 hours.</p>
                         </div>
 
-                        <div class="form-urgency">
-                            <div class="pulse-dot"></div>
-                            <span>5 security consultants available now</span>
-                        </div>
-
-                        <div class="form-trust-badges">
-                            <div class="form-trust-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fbbf24" stroke="none" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                <span>4.9/5 Google Rating</span>
-                            </div>
-                            <div class="form-trust-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                <span>GSA Contract Holder</span>
-                            </div>
-                            <div class="form-trust-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                <span>BBB A+ Rated</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
