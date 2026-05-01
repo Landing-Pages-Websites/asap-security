@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Services for Hire | ASAP Security Guards - San Diego</title>
-    <meta name="description" content="Professional security guard services in San Diego and Southern California. GSA Contract holder, veteran leadership, 24/7 availability. Hire armed and unarmed guards for your facility.">
+    <title>Private Security Companies in Southern California | ASAP Security Guards</title>
+    <meta name="description" content="Professional security guard services across Southern California — Los Angeles, Orange County, Riverside County, Inland Empire, and San Diego. Armed & unarmed guards, security patrol, event & concert security, and commercial facility protection. GSA Contract holder, veteran leadership, 24/7 availability.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://asapsecurity.org/wp-content/uploads/2024/08/cropped-ASAP-Logo-2-32x32.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Security Services for Hire | ASAP Security Guards">
-    <meta property="og:description" content="Professional security guard services in San Diego and Southern California. GSA Contract holder, veteran leadership, 24/7 availability.">
+    <meta property="og:title" content="Private Security Companies in Southern California | ASAP Security Guards">
+    <meta property="og:description" content="Professional security guard services across Southern California — Los Angeles, Orange County, Riverside County, Inland Empire, and San Diego. GSA Contract holder, veteran leadership, 24/7 availability.">
     <meta property="og:image" content="https://asapsecurity1.wpengine.com/wp-content/uploads/2021/12/asapsecurity_logo.png">
     <meta property="og:type" content="website">
 
@@ -775,6 +775,97 @@
             line-height: 1.6;
         }
 
+        /* Featured detailed service blocks */
+        .service-detail-blocks {
+            display: grid;
+            gap: 24px;
+            margin-top: 56px;
+        }
+
+        @media (min-width: 900px) {
+            .service-detail-blocks {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 28px;
+            }
+        }
+
+        .service-detail-block {
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: 20px;
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .service-detail-block:hover {
+            border-color: var(--color-gray-300);
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-detail-block .service-icon {
+            margin-bottom: 0;
+        }
+
+        .service-detail-block h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.25;
+        }
+
+        .service-detail-block p {
+            font-size: 15px;
+            color: var(--color-gray-600);
+            line-height: 1.65;
+        }
+
+        .service-detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .service-detail-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--color-gray-700);
+            line-height: 1.5;
+        }
+
+        .service-detail-list li svg {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            color: var(--color-accent, #c8a45c);
+        }
+
+        .service-detail-eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-accent, #c8a45c);
+        }
+
+        .services-overview-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-top: 64px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
         /* ============================================
            IMAGE SHOWCASE SECTION
            ============================================ */
@@ -1465,15 +1556,15 @@
                         </div>
                     </div>
 
-                    <div class="hero-eyebrow">Professional Guard Services</div>
+                    <div class="hero-eyebrow">Private Security Companies</div>
 
                     <h1 class="hero-title">
-                        <span>San Diego's Trusted</span><br>
-                        <span class="highlight">Security Guard Services</span>
+                        <span>Professional Security Guard Services</span><br>
+                        <span class="highlight">in Southern California</span>
                     </h1>
 
                     <p class="hero-description">
-                        Elite security solutions for San Diego and Southern California businesses. Armed & unarmed guards, mobile patrol, and event security from former military and law enforcement professionals.
+                        Trusted private security company serving Los Angeles, Orange County, Riverside County, the Inland Empire, and San Diego. Armed &amp; unarmed guards, security patrol, event &amp; concert security, and commercial facility protection from former military and law enforcement professionals.
                     </p>
 
                     <div class="hero-ctas">
@@ -1487,7 +1578,7 @@
                         </a>
                     </div>
                     
-                    <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 12px; font-weight: 500;">Serving San Diego County &bull; Orange County &bull; Riverside County &bull; Southern California</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 12px; font-weight: 500;">Serving Los Angeles &bull; Orange County &bull; Riverside County &bull; Inland Empire &bull; San Diego</p>
 
                     <!-- Stats -->
                     <div class="hero-stats">
@@ -1600,237 +1691,95 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-eyebrow">Our Services</div>
-                <h2 class="section-title">Professional Guard Services</h2>
-                <p class="section-description">Many of our licensed officers are former military or law enforcement with extensive training and discipline.</p>
+                <h2 class="section-title">Professional Guard Services Across Southern California</h2>
+                <p class="section-description">Many of our licensed officers are former military or law enforcement with extensive training and discipline. Below are our four core service lines &mdash; with full coverage from Los Angeles to San Diego.</p>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card">
+            <!-- Featured detail blocks for the 4 core service lines -->
+            <div class="service-detail-blocks">
+
+                <!-- Armed Security Guards -->
+                <div class="service-detail-block" id="armed-security">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
-                    <h3 class="service-title">Armed Security Guards</h3>
-                    <p class="service-description">Armed security guards for high-risk situations where the potential for violence is high.</p>
+                    <span class="service-detail-eyebrow">Service 01</span>
+                    <h3>Armed Security Guards</h3>
+                    <p>Licensed, BSIS-certified armed officers for high-risk environments where deterrence and response capability matter most. Our armed guards are typically former military or law enforcement, fully insured, and equipped to handle escalated threats while maintaining professional presence.</p>
+                    <ul class="service-detail-list">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>BSIS Firearms Permit &amp; Guard Card holders</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Banks, dispensaries, jewelers, executive protection</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>High-value asset &amp; cash-in-transit protection</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>De-escalation &amp; use-of-force trained</li>
+                    </ul>
                 </div>
 
+                <!-- Event & Concert Security -->
+                <div class="service-detail-block" id="event-security">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <span class="service-detail-eyebrow">Service 02</span>
+                    <h3>Event &amp; Concert Security</h3>
+                    <p>Crowd-management and venue security for concerts, festivals, conferences, sporting events, and private functions throughout Southern California. We scale teams from a handful of officers for a private party up to large detail formations for arena-level events.</p>
+                    <ul class="service-detail-list">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Concerts, festivals &amp; sporting events</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bag checks, access control &amp; ticket verification</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>VIP &amp; talent escort details</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Crowd flow planning &amp; emergency evacuation</li>
+                    </ul>
+                </div>
+
+                <!-- Security Patrol Services -->
+                <div class="service-detail-block" id="patrol-services">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </div>
+                    <span class="service-detail-eyebrow">Service 03</span>
+                    <h3>Security Patrol Services</h3>
+                    <p>Marked vehicle patrols and foot patrols on randomized schedules across your property. GPS-tracked check-ins and digital activity reports give you an auditable trail of every visit &mdash; ideal for HOAs, business parks, and multi-location portfolios.</p>
+                    <ul class="service-detail-list">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Marked vehicle &amp; foot patrols</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>GPS-tracked checkpoints &amp; photo reports</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Lockup, alarm response &amp; vacancy checks</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>HOAs, retail centers, construction &amp; multi-site</li>
+                    </ul>
+                </div>
+
+                <!-- Commercial & Facility Security -->
+                <div class="service-detail-block" id="commercial-security">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    </div>
+                    <span class="service-detail-eyebrow">Service 04</span>
+                    <h3>Commercial &amp; Facility Security</h3>
+                    <p>Dedicated post officers for offices, warehouses, distribution centers, medical facilities, and industrial sites. We staff lobby reception, loading docks, employee entrances, and 24/7 facility coverage with consistent assigned officers who know your property.</p>
+                    <ul class="service-detail-list">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Lobby, dock &amp; employee entrance posts</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Warehouses, distribution &amp; industrial sites</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Medical, corporate office &amp; tech campuses</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Visitor screening, badging &amp; access control</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <h3 class="services-overview-heading">Also Offering</h3>
+            <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <h3 class="service-title">Unarmed Security Guards</h3>
-                    <p class="service-description">Reliable and professional unarmed security guards for lower-risk situations.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                    </div>
-                    <h3 class="service-title">Mobile Patrol Services</h3>
-                    <p class="service-description">Excellent solution for businesses and residential areas with limited physical security.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3 class="service-title">Event Security</h3>
-                    <p class="service-description">Ensuring the safety and success of your events in Southern California.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                    </div>
-                    <h3 class="service-title">Corporate Security</h3>
-                    <p class="service-description">Providing business owners and employees peace of mind with professional solutions.</p>
+                    <p class="service-description">Reliable, professional unarmed officers for lower-risk environments &mdash; visible deterrent and customer-facing presence.</p>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     </div>
-                    <h3 class="service-title">Residential Security</h3>
-                    <p class="service-description">24/7 surveillance and guard services for HOAs, gated communities, and properties.</p>
-                </div>
-            </div>
-
-            <div class="section-ctas">
-                <a href="#contact" class="btn btn-primary btn-lg">
-                    Get Your Free Quote
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-                <a href="tel:1-833-272-7247" class="btn btn-outline btn-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    1-(833)-272-7247
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section (moved up for geo-qualification) -->
-    <section id="location">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-eyebrow">Service Area</div>
-                <h2 class="section-title">Serving San Diego & Southern California</h2>
-            </div>
-
-            <div class="location-grid">
-                <div class="location-info">
-                    <h3>ASAP Security Guards</h3>
-                    <div class="location-address">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <p>9815 Carroll Canyon Rd #208<br>San Diego, CA 92131</p>
-                    </div>
-
-                    <div class="service-areas">
-                        <h4>Service Areas</h4>
-                        <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                San Diego County
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                Orange County
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                Riverside County
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                Southern California
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="location-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.8599099753847!2d-117.1498709!3d32.9015889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbffbd0dc0c0c9%3A0x8c0c8c8c8c8c8c8c!2s9815%20Carroll%20Canyon%20Rd%20%23208%2C%20San%20Diego%2C%20CA%2092131!5e0!3m2!1sen!2sus!4v1234567890"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="ASAP Security Office Location">
-                    </iframe>
-                </div>
-            </div>
-
-            <div class="section-ctas">
-                <a href="#contact" class="btn btn-primary btn-lg">
-                    Get Your Free Quote
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-                <a href="tel:1-833-272-7247" class="btn btn-outline btn-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    1-(833)-272-7247
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Image Showcase Section -->
-    <section id="image-showcase">
-        <div class="container">
-            <div class="showcase-grid">
-                <div class="showcase-item">
-                    <img src="https://asapsecurity.org/wp-content/uploads/2025/09/ASAP-former-military-and-law-enforcement-security-guards.png" alt="ASAP Security former military and law enforcement security guards" loading="lazy">
-                    <div class="showcase-overlay">
-                        <h3 class="showcase-title">Former Military & Law Enforcement</h3>
-                        <p class="showcase-desc">Our guards bring real-world experience and discipline to every assignment.</p>
-                    </div>
-                </div>
-                <div class="showcase-item">
-                    <img src="https://asapsecurity.org/wp-content/uploads/2026/01/warehouse-security-guards-a-managers-guide-989848-1024x512.png" alt="Security guard protecting warehouse inventory and assets" loading="lazy">
-                    <div class="showcase-overlay">
-                        <h3 class="showcase-title">Industrial & Warehouse Protection</h3>
-                        <p class="showcase-desc">Safeguarding your valuable inventory and assets around the clock.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-ctas" style="margin-top: 40px;">
-                <a href="#contact" class="btn btn-primary btn-lg">
-                    Protect Your Facility
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-                <a href="tel:1-833-272-7247" class="btn btn-secondary btn-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    Call Now
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-eyebrow">Why Choose ASAP</div>
-                <h2 class="section-title">The ASAP Difference</h2>
-                <p class="section-description">We are known for an unparalleled commitment to customer satisfaction.</p>
-            </div>
-
-            <div class="expertise-grid">
-                <div class="expertise-item">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>GSA Contract Holder</h3>
-                        <p>Federal contractor with GSA Contract #47QSWA21D006F. Trusted by government agencies.</p>
-                    </div>
-                </div>
-
-                <div class="expertise-item">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>Veteran Leadership</h3>
-                        <p>Ex-Military Management Team with former military and law enforcement officers.</p>
-                    </div>
-                </div>
-
-                <div class="expertise-item">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>24/7 Availability</h3>
-                        <p>Live Human Phone Support around the clock. We adapt quickly to your changing needs.</p>
-                    </div>
-                </div>
-
-                <div class="expertise-item">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>Fully Licensed & Certified</h3>
-                        <p>State License PPO #120273, TFF #1714. BBB A+ rating, California Certified Small Business.</p>
-                    </div>
-                </div>
-
-                <div class="expertise-item">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>In-House Security Academy</h3>
-                        <p>Our Security Guard Academy provides officer certification and ongoing training.</p>
-                    </div>
-                </div>
-
-                <div class="expertise-item">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>GPS-Tracked Reports</h3>
-                        <p>Digital Activity Reporting system with GPS-tracked reports and photos.</p>
-                    </div>
+                    <h3 class="service-title">Residential &amp; HOA Security</h3>
+                    <p class="service-description">24/7 surveillance and guard services for HOAs, gated communities, apartment complexes, and high-end residential properties.</p>
                 </div>
             </div>
 
@@ -1979,6 +1928,186 @@
                 <a href="#contact" class="btn btn-primary btn-lg">
                     Get Your Free Quote
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section (moved up for geo-qualification) -->
+    <section id="location">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Service Area</div>
+                <h2 class="section-title">Serving Southern California &mdash; From LA to San Diego</h2>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-info">
+                    <h3>ASAP Security Guards</h3>
+                    <div class="location-address">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <p>9815 Carroll Canyon Rd #208<br>San Diego, CA 92131</p>
+                    </div>
+
+                    <div class="service-areas">
+                        <h4>Service Areas</h4>
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Los Angeles County
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Orange County
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Riverside County &amp; Inland Empire
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                San Diego County
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="location-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.8599099753847!2d-117.1498709!3d32.9015889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbffbd0dc0c0c9%3A0x8c0c8c8c8c8c8c8c!2s9815%20Carroll%20Canyon%20Rd%20%23208%2C%20San%20Diego%2C%20CA%2092131!5e0!3m2!1sen!2sus!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="ASAP Security Office Location">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="section-ctas">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    Get Your Free Quote
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="tel:1-833-272-7247" class="btn btn-outline btn-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    1-(833)-272-7247
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Showcase Section -->
+    <section id="image-showcase">
+        <div class="container">
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="https://asapsecurity.org/wp-content/uploads/2025/09/ASAP-former-military-and-law-enforcement-security-guards.png" alt="ASAP Security former military and law enforcement security guards" loading="lazy">
+                    <div class="showcase-overlay">
+                        <h3 class="showcase-title">Former Military & Law Enforcement</h3>
+                        <p class="showcase-desc">Our guards bring real-world experience and discipline to every assignment.</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://asapsecurity.org/wp-content/uploads/2026/01/warehouse-security-guards-a-managers-guide-989848-1024x512.png" alt="Security guard protecting warehouse inventory and assets" loading="lazy">
+                    <div class="showcase-overlay">
+                        <h3 class="showcase-title">Industrial & Warehouse Protection</h3>
+                        <p class="showcase-desc">Safeguarding your valuable inventory and assets around the clock.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-ctas" style="margin-top: 40px;">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    Protect Your Facility
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="tel:1-833-272-7247" class="btn btn-secondary btn-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Why Choose ASAP</div>
+                <h2 class="section-title">The ASAP Difference</h2>
+                <p class="section-description">We are known for an unparalleled commitment to customer satisfaction.</p>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>GSA Contract Holder</h3>
+                        <p>Federal contractor with GSA Contract #47QSWA21D006F. Trusted by government agencies.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>Veteran Leadership</h3>
+                        <p>Ex-Military Management Team with former military and law enforcement officers.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>24/7 Availability</h3>
+                        <p>Live Human Phone Support around the clock. We adapt quickly to your changing needs.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>Fully Licensed & Certified</h3>
+                        <p>State License PPO #120273, TFF #1714. BBB A+ rating, California Certified Small Business.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>In-House Security Academy</h3>
+                        <p>Our Security Guard Academy provides officer certification and ongoing training.</p>
+                    </div>
+                </div>
+
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>GPS-Tracked Reports</h3>
+                        <p>Digital Activity Reporting system with GPS-tracked reports and photos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-ctas">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    Get Your Free Quote
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="tel:1-833-272-7247" class="btn btn-outline btn-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    1-(833)-272-7247
                 </a>
             </div>
         </div>

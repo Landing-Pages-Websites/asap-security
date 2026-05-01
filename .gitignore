@@ -1,1 +1,6 @@
 .vercel
+
+# Local audit artifacts (Playwright traces & screenshots)
+.playwright-mcp/
+audit-*.png
+
