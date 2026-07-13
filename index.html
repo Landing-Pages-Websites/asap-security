@@ -2378,6 +2378,23 @@
         // ============================================
         // FORM HANDLING
         // ============================================
+        const BLOCKED_EMAILS = ['joekennethholtjr@icloud.com', 'jholt_1974@yahoo.com'];
+        const BLOCKED_PHONES = ['3238196272']; // normalized 10-digit US
+
+        function normalizeEmail(value) {
+            return (value || '').trim().toLowerCase();
+        }
+
+        function normalizePhone(value) {
+            const digits = (value || '').replace(/\D/g, '');
+            return (digits.length === 11 && digits[0] === '1') ? digits.slice(1) : digits;
+        }
+
+        function isBlockedContact(email, phone) {
+            return BLOCKED_EMAILS.indexOf(normalizeEmail(email)) !== -1
+                || BLOCKED_PHONES.indexOf(normalizePhone(phone)) !== -1;
+        }
+
         function handleFormSubmit(form, formId) {
             const submitBtn = form.querySelector('button[type="submit"]');
             const errorEl = document.getElementById(formId + '-error');
@@ -2412,6 +2429,14 @@
                 const formFields = {};
                 for (const [key, value] of formData) {
                     formFields[key] = value;
+                }
+
+                // Silently reject blocked contacts: no POST, no dataLayer, no pixel.
+                // Show the same success UI so the actor gets no signal.
+                if (isBlockedContact(formFields.email, formFields.phone)) {
+                    form.style.display = 'none';
+                    successEl.classList.add('show');
+                    return;
                 }
 
                 const attribution = getAttribution();
