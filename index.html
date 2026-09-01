@@ -673,6 +673,55 @@
             flex-shrink: 0;
         }
 
+        /* Mobile hero: surface the quote form above the fold.
+           Show the form card first and compact its spacing so the five
+           fields and the submit button fit the initial viewport. Desktop
+           (>=1024px) two-column composition is left untouched. */
+        @media (max-width: 1023px) {
+            .hero-content {
+                padding: 10px 0 32px;
+            }
+
+            .hero-layout {
+                gap: 32px;
+            }
+
+            .hero-form-wrapper {
+                order: -1;
+            }
+
+            .hero-form-card {
+                padding: 18px;
+            }
+
+            /* Keep first/last name on one row on the smallest phones too,
+               so the submit clears the floating CTA above the fold. */
+            .lead-form .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .form-header {
+                margin-bottom: 8px;
+            }
+
+            .form-trust-badges {
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+
+            .form-employment-notice {
+                margin-bottom: 10px;
+            }
+
+            .lead-form .form-group {
+                margin-bottom: 8px;
+            }
+
+            .form-submit {
+                margin-top: 6px;
+            }
+        }
+
         /* ============================================
            SERVICES SECTION
            ============================================ */
