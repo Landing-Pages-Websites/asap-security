@@ -15,6 +15,37 @@
     <meta property="og:image" content="https://asapsecurity1.wpengine.com/wp-content/uploads/2021/12/asapsecurity_logo.png">
     <meta property="og:type" content="website">
 
+    <!-- Lead path fork guard (services vs. job) -->
+    <script>
+        // The choice is UI only: it gates the lead fields and is never submitted.
+        const LEAD_PATH_FIELD = 'inquiry_path';
+        const LEAD_PATH_SERVICES = 'services';
+        const LEAD_PATH_JOB = 'job';
+
+        function getLeadPath(form) {
+            const choice = form.elements[LEAD_PATH_FIELD];
+            return choice ? choice.value : '';
+        }
+
+        // handleFormSubmit disables its button and adds btn-loading while a request
+        // is pending; the class also guards against a browser-restored disabled state.
+        function isLeadRequestPending(form) {
+            const submitBtn = form.querySelector('button[type="submit"]');
+            return Boolean(submitBtn && submitBtn.disabled && submitBtn.classList.contains('btn-loading'));
+        }
+
+        // Registered here, before any tag script loads, so this window capture
+        // listener runs ahead of every other submit listener (including analytics):
+        // a submit with no choice, the job choice, or a pending request stops here.
+        window.addEventListener('submit', function(e) {
+            const form = e.target;
+            if (!form.elements || !form.elements[LEAD_PATH_FIELD]) return;
+            if (getLeadPath(form) === LEAD_PATH_SERVICES && !isLeadRequestPending(form)) return;
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        }, true);
+    </script>
+
     <!-- MegaTag Configuration -->
     <script>
         window.MEGA_TAG_CONFIG = {
@@ -1543,6 +1574,108 @@
             to { transform: rotate(360deg); }
         }
 
+        /* ============================================
+           LEAD PATH FORK (services vs. job)
+           ============================================ */
+        .lead-path,
+        .lead-path-fields {
+            border: 0;
+            min-width: 0;
+        }
+
+        .lead-path {
+            margin-bottom: 16px;
+        }
+
+        .lead-path-legend {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .lead-path-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 232px), 1fr));
+            gap: 8px;
+        }
+
+        .lead-path-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 12px 16px;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--color-gray-900);
+            background: var(--color-gray-50);
+            border: 2px solid var(--color-gray-500);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .lead-path-option:hover {
+            border-color: var(--color-gray-700);
+        }
+
+        .lead-path-option:has(.lead-path-input:checked) {
+            border-color: var(--color-primary);
+            background: white;
+            box-shadow: inset 0 0 0 1px var(--color-primary);
+        }
+
+        .lead-path-input {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+
+        @supports selector(:has(*)) {
+            .lead-path-input:focus-visible {
+                outline: none;
+            }
+
+            .lead-path-option:has(.lead-path-input:focus-visible) {
+                outline: 2px solid var(--color-primary);
+                outline-offset: 2px;
+            }
+        }
+
+        .lead-path-job p {
+            font-size: 15px;
+            color: var(--color-gray-700);
+            margin-bottom: 16px;
+        }
+
+        .lead-path-careers {
+            display: block;
+            width: 100%;
+            padding-left: 16px;
+            padding-right: 16px;
+            text-align: center;
+            white-space: normal;
+        }
+
+        /* keep the new-tab icon after the last word when the label wraps */
+        .lead-path-careers svg {
+            display: inline-block;
+            margin-left: 6px;
+            vertical-align: -3px;
+        }
+
+        /* Desktop hero centers its columns; pin the forked card to the top so
+           revealing the fields grows it downward instead of moving the choice. */
+        @media (min-width: 1024px) {
+            .hero-form-wrapper:has(.lead-path) {
+                align-self: start;
+            }
+        }
+
         /* Accessibility */
         .sr-only {
             position: absolute;
@@ -1683,6 +1816,29 @@
                         <p class="form-employment-notice">This form is for security service inquiries only. If you are looking for employment, please visit our <a href="https://asapsecurity.org/hiring/" target="_blank" rel="noopener">careers page</a>.</p>
 
                         <form id="hero-lead-form" class="lead-form" novalidate>
+                            <fieldset class="lead-path">
+                                <legend class="lead-path-legend">How can we help?</legend>
+                                <div class="lead-path-options">
+                                    <label class="lead-path-option" for="hero-path-services">
+                                        <input type="radio" id="hero-path-services" name="inquiry_path" value="services" class="lead-path-input" required>
+                                        <span>I need security services</span>
+                                    </label>
+                                    <label class="lead-path-option" for="hero-path-job">
+                                        <input type="radio" id="hero-path-job" name="inquiry_path" value="job" class="lead-path-input" required>
+                                        <span>I'm looking for a job</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <div class="lead-path-job" aria-live="polite" hidden>
+                                <p>Thanks for your interest in joining ASAP Security. Job applications go through our careers page.</p>
+                                <a href="https://asapsecurity.org/hiring/" target="_blank" rel="noopener noreferrer" class="btn btn-outline lead-path-careers">
+                                    Apply on our careers page
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                                </a>
+                            </div>
+
+                            <fieldset class="lead-path-fields" disabled hidden>
                             <div class="form-error" id="hero-form-error">There was an error. Please try again or call us directly.</div>
 
                             <div class="form-row form-group">
@@ -1727,6 +1883,7 @@
                             </button>
 
                             <p class="form-disclaimer">No spam. We respect your privacy.</p>
+                            </fieldset>
                         </form>
 
                         <div class="form-success" id="hero-form-success">
@@ -2187,6 +2344,29 @@
                     <p class="form-employment-notice">This form is for security service inquiries only. If you are looking for employment, please visit our <a href="https://asapsecurity.org/hiring/" target="_blank" rel="noopener">careers page</a>.</p>
 
                     <form id="contact-lead-form" class="lead-form" novalidate>
+                        <fieldset class="lead-path">
+                            <legend class="lead-path-legend">How can we help?</legend>
+                            <div class="lead-path-options">
+                                <label class="lead-path-option" for="contact-path-services">
+                                    <input type="radio" id="contact-path-services" name="inquiry_path" value="services" class="lead-path-input" required>
+                                    <span>I need security services</span>
+                                </label>
+                                <label class="lead-path-option" for="contact-path-job">
+                                    <input type="radio" id="contact-path-job" name="inquiry_path" value="job" class="lead-path-input" required>
+                                    <span>I'm looking for a job</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="lead-path-job" aria-live="polite" hidden>
+                            <p>Thanks for your interest in joining ASAP Security. Job applications go through our careers page.</p>
+                            <a href="https://asapsecurity.org/hiring/" target="_blank" rel="noopener noreferrer" class="btn btn-outline lead-path-careers">
+                                Apply on our careers page
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                            </a>
+                        </div>
+
+                        <fieldset class="lead-path-fields" disabled hidden>
                         <div class="form-error" id="contact-form-error">There was an error. Please try again or call us directly.</div>
 
                         <div class="form-row form-group">
@@ -2231,6 +2411,7 @@
                         </button>
 
                         <p class="form-disclaimer">No spam. We respect your privacy.</p>
+                        </fieldset>
                     </form>
 
                     <div class="form-success" id="contact-form-success">
@@ -2436,6 +2617,30 @@
         }
 
         // ============================================
+        // LEAD PATH FORK (services vs. job)
+        // ============================================
+        // Constants, getLeadPath and the submit guard live in <head>.
+        function applyLeadPath(form) {
+            const path = getLeadPath(form);
+            const fields = form.querySelector('.lead-path-fields');
+            fields.hidden = fields.disabled = path !== LEAD_PATH_SERVICES;
+            form.querySelector('.lead-path-job').hidden = path !== LEAD_PATH_JOB;
+        }
+
+        function setupLeadPath(form) {
+            form.addEventListener('change', function(e) {
+                if (e.target.name !== LEAD_PATH_FIELD) return;
+                if (isLeadRequestPending(form)) form.elements[LEAD_PATH_FIELD].value = LEAD_PATH_SERVICES;
+                applyLeadPath(form);
+            });
+            // reset fires before the controls are restored, so sync on the next task
+            form.addEventListener('reset', function() {
+                setTimeout(function() { applyLeadPath(form); });
+            });
+            applyLeadPath(form);
+        }
+
+        // ============================================
         // FORM HANDLING
         // ============================================
         const BLOCKED_EMAILS = ['joekennethholtjr@icloud.com', 'jholt_1974@yahoo.com'];
@@ -2486,6 +2691,7 @@
                 errorEl.classList.remove('show');
 
                 const formData = new FormData(form);
+                formData.delete(LEAD_PATH_FIELD);
                 const formFields = {};
                 for (const [key, value] of formData) {
                     formFields[key] = value;
@@ -2560,6 +2766,8 @@
             const contactForm = document.getElementById('contact-lead-form');
             if (heroForm) handleFormSubmit(heroForm, 'hero-form');
             if (contactForm) handleFormSubmit(contactForm, 'contact-form');
+            if (heroForm) setupLeadPath(heroForm);
+            if (contactForm) setupLeadPath(contactForm);
 
             // Setup phone validation on both forms
             setupPhoneValidation('hero-phone', 'hero-phone-error');
